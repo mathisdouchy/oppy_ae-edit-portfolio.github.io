@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Oppy — Short-form video editor</title>
+  <meta name="description" content="Cinematic short-form edits for creators who already post — and want every second to hit harder.">
+  <meta property="og:title" content="Oppy — Short-form video editor">
+  <meta property="og:description" content="Cinematic short-form edits for creators who already post.">
+  <meta property="og:image" content="posters/hero.jpg">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#f6f6f7">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="fonts/space-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top" id="nav">
+    <div class="gut top-in">
+      <a href="#top" class="brand"><span class="mark"><i></i></span><span data-brand>Oppy</span><span class="tag">Editor</span></a>
+      <nav class="links">
+        <a href="#work" class="mono">Work</a>
+        <a href="#about" class="mono">About</a>
+        <a href="#process" class="mono">Process</a>
+        <a href="#contact" class="mono">Contact</a>
+      </nav>
+      <div class="actions">
+        <button class="ib" id="theme" aria-label="Toggle dark mode" title="Toggle theme">
+          <svg class="moon" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/></svg>
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
+        <a href="#contact" class="btn-dark hide-sm">Let's talk ↗</a>
+        <button class="ib show-sm" id="menuBtn" aria-label="Menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8h16M4 16h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <nav class="gut mobile-menu" id="menu" hidden>
+      <a href="#work">Work</a><a href="#about">About</a><a href="#process">Process</a><a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="gut hero" id="top">
+      <div class="meta">
+        <span class="mono">— 01 — <span data-role></span></span>
+        <span class="mono hide-sm"><b class="dot"></b> Available for projects</span>
+      </div>
+      <h1 class="big rv"><span data-brand>Oppy</span><span class="muted">.</span></h1>
+      <div class="hgrid">
+        <div class="hl">
+          <p class="sub rv" style="--d:80ms"><span data-hero1></span><br><span data-hero2></span></p>
+          <div class="hbot rv" style="--d:160ms">
+            <p data-tagline></p>
+            <div class="row">
+              <a href="#work" class="btn-dark">View work ↓</a>
+              <a href="#contact" class="btn">Let's talk ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="index rv" style="--d:120ms">
+          <p class="mono index-h">Index — Selected work</p>
+          <ul id="indexList"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- TICKER + STATS -->
+    <div class="gut"><div class="tick"><div class="tk" id="ticker"></div></div></div>
+    <div class="gut"><div class="stats" id="stats"></div></div>
+
+    <!-- WORK -->
+    <section class="gut section" id="work">
+      <div class="sec-head">
+        <div>
+          <p class="mono rv">— 02 — Selected work</p>
+          <h2 class="h2 rv">Featured edits</h2>
+          <p class="lead rv">Talking heads, podcasts and commentary — cut for retention, finished like film. Click any edit to watch it with sound.</p>
+        </div>
+        <span class="mono rv" id="count"></span>
+      </div>
+      <div class="grid" id="grid"></div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section line-top" id="about">
+      <div class="gut about">
+        <div>
+          <p class="mono rv">— 03 — About</p>
+          <h2 class="xl rv"><span data-about-dark></span> <span class="muted" data-about-muted></span></h2>
+          <a class="card profile rv" id="profile" style="--d:120ms" target="_blank" rel="noopener">
+            <span class="avatar">O</span>
+            <span class="grow"><b data-brand>Oppy</b><span class="mono" data-role></span></span>
+            <span class="muted">↗</span>
+          </a>
+        </div>
+        <div class="about-r">
+          <div id="aboutText"></div>
+          <div class="meta-list rv" id="metaList"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="section line-top" id="process">
+      <div class="gut">
+        <p class="mono rv">— 04 — Process</p>
+        <h2 class="h2 rv">From raw footage to ready.</h2>
+        <p class="lead rv">Four steps, no guesswork.</p>
+        <div class="steps" id="steps"></div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section line-top center" id="contact">
+      <div class="gut">
+        <p class="mono rv">— 05 — Contact</p>
+        <h2 class="xl rv">Let's create <span class="muted">something.</span></h2>
+        <p class="lead rv narrow">Already posting and ready for edits that stop the scroll? Send your channel and a few clips — I reply within 24 hours.</p>
+        <div class="row center-row rv" id="contactBtns"></div>
+        <p class="small rv">or email <a id="emailLink" class="u"></a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="line-top">
+    <div class="gut foot">
+      <p><b data-brand>Oppy</b> · <span data-role></span>.</p>
+      <p><a href="#work">Work</a> · <a href="#about">About</a> · <a href="#contact">Contact</a></p>
+      <p>© <span id="year"></span> <span data-brand>Oppy</span></p>
+    </div>
+  </footer>
+
+  <!-- VIDEO PLAYER -->
+  <div class="modal" id="modal" hidden role="dialog" aria-modal="true" aria-labelledby="mTitle">
+    <div class="m-box" id="mBox">
+      <div class="m-media" id="mMedia"></div>
+      <div class="m-info">
+        <div class="m-top"><span class="mono" id="mMeta"></span><button class="ib" id="mClose" aria-label="Close">✕</button></div>
+        <h3 class="h2" id="mTitle"></h3>
+        <p class="m-desc" id="mDesc"></p>
+        <div class="chips" id="mTags"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="content.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
